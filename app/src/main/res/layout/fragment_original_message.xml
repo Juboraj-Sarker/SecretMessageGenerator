@@ -1,0 +1,204 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#59cca4"
+    tools:context="juborajsarker.secretmessagegenerator.fragment.OriginalMessageFragment">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:background="#ffffff"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:paddingBottom="12dp">
+
+
+                <EditText
+                    android:id="@+id/input_secret_msg_ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#d4d4d4"
+                    android:elevation="4dp"
+                    android:hint="Long press to paste your secret message"
+                    android:maxLines="7"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="4dp"
+                    android:textColor="#131048"
+                    android:textColorHint="#9c9c9c" />
+
+                <EditText
+                    android:id="@+id/input_secret_passcode_ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/message_s"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#d4d4d4"
+                    android:elevation="4dp"
+                    android:hint="Enter passcode (optional)*"
+                    android:maxLines="1"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="4dp"
+                    android:textColor="#131048"
+                    android:textColorHint="#9c9c9c" />
+
+
+                <Button
+                    android:id="@+id/btn_return_original"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#00695C"
+                    android:elevation="4dp"
+                    android:text="Return Original Message"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp"
+                android:background="#ffffff"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:paddingBottom="12dp">
+
+
+
+                <EditText
+                    android:id="@+id/output_original_msg_ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#d4d4d4"
+                    android:elevation="4dp"
+                    android:hint="Original message will show here"
+                    android:editable="false"
+                    android:maxLines="7"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="4dp"
+                    android:textColor="#131048"
+                    android:textColorHint="#9c9c9c" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:id="@+id/btn_original_message_copy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="2dp"
+                        android:background="#00695C"
+                        android:elevation="4dp"
+                        android:text="Copy your original message"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:textColor="#fff"/>
+
+
+                    <Button
+                        android:id="@+id/btn_original_message_share"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:elevation="4dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="16dp"
+                        android:background="#00695C"
+                        android:text="Share your original message"
+                        android:textAllCaps="false"
+                        android:textSize="16sp"
+                        android:textColor="#fff" />
+
+
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/btn_clear_all_text_original"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:background="#087a89"
+                    android:elevation="4dp"
+                    android:text="Clear All Text"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>
