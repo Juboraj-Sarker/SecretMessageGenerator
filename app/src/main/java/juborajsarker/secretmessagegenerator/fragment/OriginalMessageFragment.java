@@ -200,7 +200,7 @@ public class OriginalMessageFragment extends Fragment {
                     mInterstitialAd = new InterstitialAd(getContext());
                     mInterstitialAd.setAdUnitId(getString(R.string.interstitial_full_screen1));
 
-                    AdRequest adRequest = new AdRequest.Builder().addTestDevice("2BA46C54FD47FD80CBBAD95AE0F70E1A").build();
+                    AdRequest adRequest = new AdRequest.Builder().addTestDevice("93448558CC721EBAD8FAAE5DA52596D3").build();
                     mInterstitialAd.loadAd(adRequest);
 
 

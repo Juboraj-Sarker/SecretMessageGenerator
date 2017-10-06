@@ -54,19 +54,15 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
 
-
-
     }
 
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new SecretMessageFragment(),   "Original to Secret");
-        adapter.addFragment(new OriginalMessageFragment(), "Secret to Original");
+        adapter.addFragment(new SecretMessageFragment(), "Make Secret");
+        adapter.addFragment(new OriginalMessageFragment(), "Return Original");
         viewPager.setAdapter(adapter);
     }
-
-
 
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -99,12 +95,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        MenuInflater inflater=getMenuInflater();
+        MenuInflater inflater = getMenuInflater();
 
         inflater.inflate(R.menu.help_menu, menu);
         inflater.inflate(R.menu.rate_apps, menu);
@@ -114,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }
-
 
 
     public void help_menu(MenuItem item) {
@@ -140,8 +133,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
     public void share_app(MenuItem item) {
 
 
@@ -149,13 +140,11 @@ public class MainActivity extends AppCompatActivity {
         String filePath = app.sourceDir;
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("*/*");
-        intent.createChooser(intent,"Secret Message Generator");
+        intent.createChooser(intent, "Secret Message Generator");
         intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(filePath)));
         startActivity(Intent.createChooser(intent, "share Secret Message Generator using"));
 
     }
-
-
 
 
     public void aboutMe(MenuItem item) {
@@ -165,35 +154,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
     public void rateApp() {
-        try
-        {
+        try {
             Intent rateIntent = rateIntentForUrl("market://details");
             startActivity(rateIntent);
-        }
-        catch (ActivityNotFoundException e)
-        {
+        } catch (ActivityNotFoundException e) {
             Intent rateIntent = rateIntentForUrl("https://play.google.com/store/apps/details");
             startActivity(rateIntent);
         }
     }
 
 
-    private Intent rateIntentForUrl(String url)
-    {
+    private Intent rateIntentForUrl(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.format("%s?id=%s", url, getPackageName())));
         int flags = Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK;
-        if (Build.VERSION.SDK_INT >= 21)
-        {
+        if (Build.VERSION.SDK_INT >= 21) {
             flags |= Intent.FLAG_ACTIVITY_NEW_DOCUMENT;
-        }
-        else
-        {
+        } else {
             flags |= Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET;
         }
         intent.addFlags(flags);
@@ -201,16 +178,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-//                finish();
-//                System.exit(0);
-//                return true;
-
 
                 InputMethodManager inputManager = (InputMethodManager)
                         getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -220,16 +191,16 @@ public class MainActivity extends AppCompatActivity {
 
                 AlertDialog.Builder builder;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    builder = new AlertDialog.Builder(this, android.R.style.Theme_Holo_Dialog);
+                    builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Light_Dialog);
                 } else {
                     builder = new AlertDialog.Builder(this);
                 }
-                builder.setTitle("Are you sure?\n You want to really exit?")
-                        .setMessage("Touch on YES if you want to really exit.\nOtherwise touch on Cancel button if you don't want to exit")
+                builder.setTitle("Thanks for using my app")
+                        .setMessage("\nAre you sure you want to really exit?")
                         .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
 
-                                System.exit(0);
+                                AppExit();
                             }
                         })
                         .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -237,9 +208,7 @@ public class MainActivity extends AppCompatActivity {
                                 dialog.cancel();
                             }
                         })
-                        .setIcon(android.R.drawable.ic_notification_clear_all)
                         .show();
-
 
 
             default:
@@ -248,5 +217,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    public void AppExit() {
+
+        this.finish();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
+
+    }
+
+
 
 }
