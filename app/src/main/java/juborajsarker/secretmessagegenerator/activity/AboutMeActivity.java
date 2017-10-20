@@ -11,7 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -133,6 +132,9 @@ public class AboutMeActivity extends AppCompatActivity {
 
 
 
+
+
+
     public void rateApp() {
         try
         {
@@ -147,8 +149,7 @@ public class AboutMeActivity extends AppCompatActivity {
     }
 
 
-    private Intent rateIntentForUrl(String url)
-    {
+    private Intent rateIntentForUrl(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.format("%s?id=%s", url, getPackageName())));
         int flags = Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK;
         if (Build.VERSION.SDK_INT >= 21)
@@ -161,47 +162,6 @@ public class AboutMeActivity extends AppCompatActivity {
         }
         intent.addFlags(flags);
         return intent;
-    }
-
-
-
-
-
-
-
-
-    public void facebook(View view) {
-
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://www.facebook.com/sarker.juboraj"));
-        startActivity(intent);
-    }
-
-    public void googlePlus(View view) {
-
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://plus.google.com/+JuborajSarker001"));
-        startActivity(intent);
-    }
-
-    public void twitter(View view) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://twitter.com/juboraj_sarker"));
-        startActivity(intent);
-    }
-
-    public void linkedIn(View view) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("https://www.linkedin.com/in/juboraj-sarker"));
-        startActivity(intent);
     }
 
 }

@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/settingsMenu"
-        android:orderInCategory="5"
+        android:orderInCategory="6"
         android:onClick="aboutMe"
         android:title="About"
         app:showAsAction="never" />

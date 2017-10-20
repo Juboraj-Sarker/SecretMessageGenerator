@@ -168,6 +168,10 @@ public class HowItWorksActivity extends AppCompatActivity {
 
 
 
+
+
+
+
     public void aboutMe(MenuItem item) {
 
         Intent about_me = new Intent(HowItWorksActivity.this, AboutMeActivity.class);

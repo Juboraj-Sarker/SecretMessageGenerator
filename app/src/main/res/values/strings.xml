@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SecretMessageGenerator</string>
+    <string name="app_name">Secret Message</string>
 
 
     <style name="DefaultButtonText">
@@ -22,10 +22,10 @@
     <string name="btn_fullscreen_ad">Show Fullscreen Ad</string>
 
 
-    <string name="banner_home_footer">ca-app-pub-5809082953640465/2454868039</string>
 
 
-    <string name="interstitial_full_screen1">ca-app-pub-5809082953640465/5905931713</string>
+
+    <string name="interstitial_full_screen1">ca-app-pub-5809082953640465/6267739811</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
