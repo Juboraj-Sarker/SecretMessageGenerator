@@ -1,0 +1,2 @@
+# Secret Message Generator
+This application will make secret our conversation. Such as, in this era we always use facebook, twitter or viber, whatsapp for our communication. But if somehow our account hacked or if somehow anyone can access our account they can read our valuable and personal conversation. So this application will help in this situation. No one can read our personal and valuable conversation except this app. It really easy to use and secure.
